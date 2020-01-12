@@ -67,6 +67,8 @@ public:
         else
             new_parent->left_son = v;
         v->parent = new_parent;
+        v->rank_right_son = 0;
+        v->rank_left_son = 0;
         v->height_right = 0;
         v->height_left = 0;
         v->sub_size = 1;

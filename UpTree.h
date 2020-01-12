@@ -12,7 +12,7 @@ public:
     UpVertex(int key, T *data) : key(key), size(1), parent(data), data(data) {}
 
     virtual ~UpVertex() {
-        
+
     }
 };
 
@@ -24,6 +24,12 @@ public:
 
     UpTree(int size) : size(size) {
         parents = new UpVertex<T> *[size + 1];
+        parents[0] = nullptr;
+        for (int i = 1; i <= size; ++i) {
+            T *farm = new T(i);
+            UpVertex<T> *upVertex = new UpVertex<T>(i, farm);
+            parents[i] = upVertex;
+        }
     }
 
     int Find(int a) {

@@ -48,11 +48,11 @@ DataCenterManager::DataCenterManager(int n) : num_farms(n), servers(0) {
     hash_Servers = new DynamicHashTable<Server>(STARTING_HASH);
     all_servers_by_traffic = new AVLtree<Server, int>();
     farms = new UpTree<DataCenter>(n);
-    for (int i = 1; i <= n; ++i) {
+/*    for (int i = 1; i <= n; ++i) {
         DataCenter *farm = new DataCenter(i);
         UpVertex<DataCenter> *upVertex = new UpVertex<DataCenter>(i, farm);
         farms->parents[i] = upVertex;
-    }
+    }*/
 }
 
 ////             MergeDataCenters          ////
